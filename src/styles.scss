@@ -1,1 +1,197 @@
-/* You can add global styles to this file, and also import other style files */
+$color_secundario: #F8EFE6;
+
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: $color_secundario;
+    font-size: 1rem;
+    font-family: 'OpenSans', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+
+.contenedor-vista-sistema{
+    margin-left: 80px;
+    margin-top: 80px;
+    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15,0.86);
+}
+
+
+main{
+    padding: 20px;
+}
+
+
+.header-sistema{
+    width: 100%;
+    height: 80px;
+    background-color: #f5f5f5;
+
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+
+    .icon-menu{
+        width: 50px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform:  translateX(10px);
+
+        .icono__menu{
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+        }
+    }
+}
+
+
+
+
+.menu__side{
+    width: 80px;
+
+    height: 100%;
+    background-color: #1783db;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    z-index: 300;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15,0.86);
+   
+    //recortnado textos
+    overflow: hidden; 
+    border-right: 20px solid #1783db;
+
+    //para que se muestre cuando pondemo el celular horizontal
+    overflow-y: scroll;
+
+    /*Ocultar Scroll para IE, Edge y Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    /*Ocultar Scroll para Chrome, Safari y Opera*/
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+
+
+
+    .name__page{
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        .icono-primero{
+            width: 20px;
+            margin-right: 20px;
+        }
+    }
+
+
+
+
+    .options__menu{
+        padding: 20px 30px;
+        position: absolute;
+        top: 80px;
+
+        a{
+            color: #ffffffb2;
+            cursor: default;
+            display: block;
+            position: relative;
+            transition: color 300ms;
+
+            &:hover{
+                color: #fff;
+            }
+
+            &.activado{
+                color: #fff;
+
+                &::before{
+                    content: '';
+                    width: 2px;
+                    height: 80%;
+                    background-color: #fff;
+                    position: absolute;
+                    top: 10%;
+                    left: -30px;
+                }
+            }
+
+            
+        }
+
+        .option{
+            padding: 20px 0px;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .icono-option{
+                width: 20px;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+
+            h4{
+                font-weight: 300;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+// CLASES PARA USAR EN JAVASCRIPT
+
+.contenedor-vista-sistema_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
+
+
+
+@media screen and (max-width: 760px) {
+
+    .contenedor-vista-sistema_move{
+        margin-left: 0;
+
+    }
+
+    .menu__side_move{
+        width: 80px;
+        left: -80px;
+    }
+
+
+    
+    
+}
